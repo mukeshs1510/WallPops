@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ThumbnailUpload">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            app:title="Add Thumbnail" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/ETtitleThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:ems="10"
+                android:hint="@string/thumbnail_title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:inputType="textUri"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="10dp"
+                android:background="@drawable/edit_text_ui"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageThumbnail"
+                    android:layout_width="136dp"
+                    android:layout_height="143dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/sdcs" />
+
+                <TextView
+                    android:id="@+id/nameee2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@id/imageThumbnail"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito_sans_bold"
+                    android:text="@string/add_thumbnail"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    />
+
+                <Button
+                    android:id="@+id/addThumbnailbtn"
+                    android:layout_width="157dp"
+                    android:layout_height="53dp"
+                    android:text="@string/add"
+                    android:textAllCaps="false"
+                    android:layout_toRightOf="@id/imageThumbnail"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/nameee2"
+                    android:layout_marginTop="20dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/bttn_ui"
+                    />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/wallpaperTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallpaper_link"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/wallpaperLinkText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallpaper_link"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/thumbnailLinkText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallpaper_link"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"/>
+
+            <Button
+                android:id="@+id/finalUploadBtn"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/save"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

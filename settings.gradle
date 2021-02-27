@@ -1,0 +1,3 @@
+include ':wallpopsadmin'
+include ':app'
+rootProject.name = "WallPops"
