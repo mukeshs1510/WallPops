@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,12 +22,14 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
 public class LoginActivity extends AppCompatActivity {
 
     private TextInputEditText email,password;
     private Button loginButton;
     private FirebaseAuth mAuth;
+    private ImageView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.loginEmailAdmin);
         password = findViewById(R.id.loginPasswordAdmin);
         loginButton = findViewById(R.id.loginBttnAdmin);
+        logo = findViewById(R.id.logo);
 
         mAuth = FirebaseAuth.getInstance();
+
+        Picasso.get().load("https://sdk.bitmoji.com/render/panel/853b9378-b5c2-4a12-9bf8-efcdc45f465d-b93dde4d-c80d-4c9f-a0af-70cbc082671e-v1.png?transparent=1&palette=1").into(logo);
 
         SharedPreferences sharedPreferences = getSharedPreferences("com.mbs.wallpops_admin_login_status",MODE_PRIVATE);
         String check = sharedPreferences.getString("login_status","off");
@@ -70,6 +76,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(EmailAddress.isEmpty() || Passwordd.isEmpty()) {
                     Snackbar.make(findViewById(android.R.id.content),"Please fill the details!!!",Snackbar.LENGTH_LONG).show();
+                    dialog.dismiss();
                 } else {
                     mAuth.signInWithEmailAndPassword(EmailAddress,Passwordd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

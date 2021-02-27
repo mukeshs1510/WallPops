@@ -1,100 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:fillViewport="true"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <LinearLayout
-        android:id="@+id/axz"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        android:layout_marginLeft="30dp"
-        android:padding="15dp"
-        android:layout_marginStart="30dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email Address"
-            android:textAlignment="center"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/grey_80"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:gravity="center_horizontal" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loginEmailAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:padding="12dp"
-            android:layout_marginTop="5dp"
-            android:inputType="textEmailAddress"
-            android:maxLength="50"
-            android:maxLines="1"
-            android:hint="Email Address"
-            android:textSize="13sp"
-            android:singleLine="true"
-            android:textColor="@color/grey_80"
-            android:background="@drawable/edit_text_ui"/>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="20dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password"
-            android:textAlignment="center"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/grey_80"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
-            android:textSize="16sp"/>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loginPasswordAdmin"
+        <LinearLayout
+            android:id="@+id/axz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:layout_marginTop="5dp"
-            android:inputType="textPassword"
-            android:hint="Password"
-            android:background="@drawable/edit_text_ui"
-            android:maxLength="50"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textSize="13sp"
-            android:textColor="@color/grey_80"
-            />
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:padding="15dp"
+            android:layout_marginStart="30dp">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="15dp" />
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="160dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="160dp"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email Address"
+                android:textAlignment="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/grey_80"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center_horizontal" />
 
-            <Button
-                android:id="@+id/loginBttnAdmin"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginEmailAdmin"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginLeft="-4dp"
-                android:layout_marginRight="-4dp"
-                android:background="@drawable/bttn_ui"
-                android:text="Login Admin"
-                android:layout_marginTop="8dp"
-                android:textAllCaps="false"
+                android:layout_height="45dp"
+                android:padding="12dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:hint="Email Address"
+                android:textSize="13sp"
+                android:singleLine="true"
+                android:textColor="@color/grey_80"
+                android:background="@drawable/edit_text_ui"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textAlignment="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/grey_80"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:textSize="16sp"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginPasswordAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:padding="12dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:background="@drawable/edit_text_ui"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="13sp"
+                android:textColor="@color/grey_80"
                 />
 
-        </RelativeLayout>
-    </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="15dp" />
 
-</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/loginBttnAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:background="@drawable/bttn_ui"
+                    android:text="Login"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/white"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
