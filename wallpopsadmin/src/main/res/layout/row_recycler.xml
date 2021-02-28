@@ -6,12 +6,20 @@
     app:cardCornerRadius="14dp"
     android:layout_margin="10dp"
     android:id="@+id/mainLayout"
+    app:cardPreventCornerOverlap="false"
+    android:elevation="8dp"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0.0px"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    app:cardElevation="10dp"
     android:background="@color/colorCardBackground"
     android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <ImageView
             android:id="@+id/imaggViewRow"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WallpopsAdmin</string>
+    <string name="app_name">WallPopsAdmin</string>
     <string name="add_thumbnail">Add Thumbnail</string>
     <string name="add">Add</string>
     <string name="sdcs">sdcs</string>
@@ -11,10 +11,11 @@
     <string name="thumbnail_title">Thumbnail Title</string>
     <string name="wallpaper_link">Wallpaper Link</string>
     <string name="next">Next</string>
+    <string name="wallpops">WallPops</string>
 
     <string-array name="title">
-        <item>Add Wallpaper</item>
-        <item>Show Wallpaper</item>
+        <item>Add New Wallpaper</item>
+        <item>Show All Wallpaper</item>
     </string-array>
 
 </resources>

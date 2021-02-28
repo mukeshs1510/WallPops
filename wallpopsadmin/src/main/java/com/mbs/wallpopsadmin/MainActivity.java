@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     AdaptorRecycler adapter;
     int[] image = {R.drawable.wallpaperr,R.drawable.download};
     private FirebaseAuth mAuth;
-    private ImageView logoutBtn;
+    private Button logoutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         adapter = new AdaptorRecycler(MainActivity.this,title,image);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
-
     }
 
     private void logOut() {
