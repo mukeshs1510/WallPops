@@ -30,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="Signout"
+            android:textAllCaps="false"
             android:background="@drawable/bttn_ui_trans"
             android:layout_centerVertical="true"
             android:textColor="@android:color/white"
