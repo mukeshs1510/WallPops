@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textAlignment="center"
-    android:background="@android:color/white"
     tools:context=".RegisterFragment">
 
     <TextView
@@ -14,28 +12,27 @@
         android:layout_height="wrap_content"
         android:text="@string/create_an_account"
         android:textStyle="bold"
-        android:layout_above="@id/text2_signup"
-        android:textColor="@color/colorBlk"
-        android:layout_marginStart="20dp"
-        android:textSize="28sp"/>
+        style="@style/TextAppearance.AppCompat.SearchResult.Title"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="24dp"
+        android:textSize="22sp"/>
 
     <TextView
         android:id="@+id/text2_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/give_your_details_to_register_with_us"
-        android:layout_above="@id/container_signup"
         android:textStyle="bold"
-        android:layout_marginBottom="50dp"
-        android:layout_marginStart="20dp"
-        android:textSize="18sp"/>
+        android:layout_below="@id/text1_signup"
+        android:layout_marginStart="24dp"
+        android:textSize="14sp"/>
 
     <RelativeLayout
         android:id="@+id/container_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="50dp"
-        android:paddingTop="20dp"
+        android:elevation="5dp"
+        android:paddingTop="15dp"
         android:paddingBottom="20dp"
         android:layout_centerInParent="true"
         android:background="@drawable/backgroud_signup"
@@ -50,7 +47,7 @@
             android:fontFamily="@font/nunito_sans_bold"
             android:layout_marginTop="20dp"
             android:layout_marginStart="32dp"
-            android:textSize="28sp"
+            android:textSize="24sp"
             android:textColor="@color/text_login"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -156,7 +153,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/loginSignup"
+            android:id="@+id/buttonSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textInout4"
@@ -166,6 +163,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_white"
             android:textColor="@color/colorBlk"
+            android:elevation="5dp"
             android:text="@string/register"
             android:textAllCaps="false"
             android:textSize="18sp"
@@ -187,7 +185,7 @@
             android:text="@string/already_have_an_account"
             android:textSize="16sp"/>
         <TextView
-            android:id="@+id/loginToRegisterText"
+            android:id="@+id/resigsterToLoginText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/log_in"
@@ -198,15 +196,14 @@
     </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/text1_signup"
-        android:layout_marginTop="35dp"
-        android:elevation="99dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_below="@id/text2_signup"
+        android:elevation="6dp"
         app:civ_border_width="1dp"
         app:civ_border_color="@android:color/transparent"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="50dp"
         android:scaleType="centerCrop"
         android:src="@drawable/person"/>
 

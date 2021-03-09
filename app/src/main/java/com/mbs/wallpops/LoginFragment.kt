@@ -1,11 +1,15 @@
 package com.mbs.wallpops
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -33,12 +37,19 @@ class LoginFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        var email = emailLogin.text.toString()
-        var password = passwordLogin.text.toString()
+        if(firebaseAuth.currentUser != null) {
+            navController!!.navigate(R.id.action_loginFragment_to_homeFragment)
+        }
 
         loginBtn.setOnClickListener() {
+
+            var email = emailLogin.text.toString()
+            var password = passwordLogin.text.toString()
+
             if(!email.isEmpty() && !password.isEmpty()){
                 login(email,password)
+            } else {
+                Snackbar.make((activity as AppCompatActivity).findViewById(android.R.id.content),"Please fill your credentials", Snackbar.LENGTH_SHORT).show()
             }
         }
 
@@ -48,12 +59,26 @@ class LoginFragment : Fragment() {
     }
 
     fun login(email: String, password: String) {
+
+        val dialog = Dialog(activity as AppCompatActivity)
+        dialog.setContentView(R.layout.dialog_loader)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.window!!.setLayout(
+            WindowManager.LayoutParams.WRAP_CONTENT,
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window!!.attributes.windowAnimations = android.R.style.Animation_Dialog
+        dialog.show()
+
         this.firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(activity as AppCompatActivity, OnCompleteListener<AuthResult> { task ->
                 if (task.isSuccessful) {
+                    dialog.dismiss()
                     navController!!.navigate(R.id.action_loginFragment_to_homeFragment)
                 } else {
                     Snackbar.make((activity as AppCompatActivity).findViewById(android.R.id.content),"Failed!", Snackbar.LENGTH_SHORT).show()
+                    dialog.dismiss()
                 }
             })
 
