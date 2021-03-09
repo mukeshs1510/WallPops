@@ -33,7 +33,6 @@ class RegisterFragment : Fragment() {
         } else {
             navController!!.navigate(R.id.action_registerFragment_to_homeFragment)
         }
-
     }
 
 }
