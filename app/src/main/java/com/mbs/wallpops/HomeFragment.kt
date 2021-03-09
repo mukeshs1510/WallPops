@@ -6,9 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
+
+    private val firebaseRepository = FirebaseRepository()
+    private var navController: NavController? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +30,12 @@ class HomeFragment : Fragment() {
 
         val actionBar = (activity as AppCompatActivity).supportActionBar
         actionBar!!.title = "WallPops"
+
+        navController = Navigation.findNavController(view)
+
+        if(firebaseRepository.getUser() == null) {
+            navController!!.navigate(R.id.action_homeFragment_to_registerFragment)
+        }
 
     }
 
