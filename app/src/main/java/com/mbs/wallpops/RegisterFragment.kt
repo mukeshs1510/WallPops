@@ -34,5 +34,4 @@ class RegisterFragment : Fragment() {
             navController!!.navigate(R.id.action_registerFragment_to_homeFragment)
         }
     }
-
 }
