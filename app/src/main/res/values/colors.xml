@@ -6,6 +6,8 @@
 
     <color name="colorBackground">#ffffff</color>
     <color name="colorText">#000</color>
+    <color name="colorTextSec">#424242</color>
+    <color name="colorLightGrey">#D8D8D8</color>
     <color name="colorBlk">#EB070707</color>
 
     <color name="background_login">#8D3DAF</color>

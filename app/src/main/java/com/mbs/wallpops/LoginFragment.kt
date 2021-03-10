@@ -37,10 +37,6 @@ class LoginFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        if(firebaseAuth.currentUser != null) {
-            navController!!.navigate(R.id.action_loginFragment_to_homeFragment)
-        }
-
         loginBtn.setOnClickListener() {
 
             var email = emailLogin.text.toString()

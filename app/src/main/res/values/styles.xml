@@ -16,6 +16,7 @@
     <style name="ActionBarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="fontFamily">@font/nunito_sans_bold</item>
         <item name="android:textColorPrimary">@color/colorText</item>
+        <item name="android:textColorSecondary">@color/colorTextSec</item>
     </style>
 
     <style name="EditText.Login" parent="Widget.AppCompat.EditText">

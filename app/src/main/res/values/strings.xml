@@ -18,4 +18,8 @@
     <string name="your_name">Your Name</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="register">Register</string>
+    <string name="try_the_best_wallpaper_which_suites_your_personality">Try the best wallpaper which suites your personality</string>
+    <string name="or">OR</string>
+    <string name="get_started">Get Started</string>
+    <string name="sign_in">Sign in</string>
 </resources>

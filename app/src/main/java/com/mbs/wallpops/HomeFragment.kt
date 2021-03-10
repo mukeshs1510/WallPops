@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
         navController = Navigation.findNavController(view)
 
         if(firebaseRepository.getUser() == null) {
-            navController!!.navigate(R.id.action_homeFragment_to_registerFragment)
+            navController!!.navigate(R.id.action_homeFragment_to_authFragment)
         }
 
     }
