@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_auth.*
 
@@ -17,6 +20,8 @@ class AuthFragment : Fragment() {
     private var floatView: Float = 0F
 
     private val RC_SIGN_IN = 234
+    lateinit var mGoogleSignInClient: GoogleSignInOptions
+    val Req_Code:Int=123
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +36,9 @@ class AuthFragment : Fragment() {
         navController = Navigation.findNavController(view)
 
         if(firebaseAuth.currentUser != null) {
-            navController!!.navigate(R.id.action_loginFragment_to_homeFragment)
+            navController!!.navigate(R.id.action_authFragment_to_homeFragment)
+            //(activity as AppCompatActivity).supportFragmentManager.beginTransaction().remove(this).commit()
+
         }
 
         animateButtons()
@@ -41,6 +48,12 @@ class AuthFragment : Fragment() {
         loginBtnAuth.setOnClickListener() {
             navController!!.navigate(R.id.action_authFragment_to_loginFragment)
         }
+
+//        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestEmail()
+//            .build()
+//
+//        mGoogleSignInClient = GoogleSignIn.getClient(, gso);
 
     }
 

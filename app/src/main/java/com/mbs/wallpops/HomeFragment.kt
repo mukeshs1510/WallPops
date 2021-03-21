@@ -27,6 +27,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (activity as AppCompatActivity).setSupportActionBar(main_toolbar)
+        (activity as AppCompatActivity).supportFragmentManager.popBackStack()
 
         val actionBar = (activity as AppCompatActivity).supportActionBar
         actionBar!!.title = "WallPops"

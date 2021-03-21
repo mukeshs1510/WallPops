@@ -15,6 +15,43 @@
       },
       "oauth_client": [
         {
+          "client_id": "447565071261-phtjo4fgvd1nir67odjqgke46ep0fl9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mbs.wallpops",
+            "certificate_hash": "aa3faa373a85b9bd0c40e75f4b61fc20ba7156b8"
+          }
+        },
+        {
+          "client_id": "447565071261-5or1g4h6uejp04lkf171l0bbmceosaq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBem7rjlRB58H-ijw6g8kauR-k3vqaFzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447565071261-5or1g4h6uejp04lkf171l0bbmceosaq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447565071261:android:45a3290f30170ffec22574",
+        "android_client_info": {
+          "package_name": "com.mbs.wallpopsadmin"
+        }
+      },
+      "oauth_client": [
+        {
           "client_id": "447565071261-5or1g4h6uejp04lkf171l0bbmceosaq0.apps.googleusercontent.com",
           "client_type": 3
         }

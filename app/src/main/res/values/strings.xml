@@ -22,4 +22,6 @@
     <string name="or">OR</string>
     <string name="get_started">Get Started</string>
     <string name="sign_in">Sign in</string>
+    <string name="google_client_id">447565071261-qu40vc0567jh6r7eva5t4v6lqu0kevor.apps.googleusercontent.com</string>
+    <string name="google_client_secret">0yBcLzMujbRGwOgqqSmFZF5b</string>
 </resources>
