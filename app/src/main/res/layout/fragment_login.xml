@@ -102,7 +102,7 @@
                 style="@style/EditText.Login"
                 android:backgroundTint="@android:color/white"
                 android:singleLine="true"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

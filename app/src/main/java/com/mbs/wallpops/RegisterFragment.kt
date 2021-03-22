@@ -15,6 +15,8 @@ import androidx.navigation.Navigation
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_register.*
 
@@ -22,6 +24,7 @@ class RegisterFragment : Fragment() {
 
     private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private var navController: NavController? = null
+    private val dbRef: DatabaseReference = FirebaseDatabase.getInstance().reference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -86,6 +89,7 @@ class RegisterFragment : Fragment() {
             (activity as AppCompatActivity),
             OnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    saveUserData()
                     dialog.dismiss()
                     navController!!.navigate(R.id.action_registerFragment_to_homeFragment)
                 } else {
@@ -98,5 +102,9 @@ class RegisterFragment : Fragment() {
 
                 }
             })
+    }
+
+    private fun saveUserData() {
+
     }
 }
