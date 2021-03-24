@@ -99,7 +99,6 @@ class RegisterFragment : Fragment() {
                         "Error registering, try again later :(",
                         Snackbar.LENGTH_SHORT
                     ).show()
-
                 }
             })
     }
