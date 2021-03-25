@@ -11,18 +11,19 @@ import com.google.firebase.database.FirebaseDatabase
 class RealtimeDatabase {
     companion object{
         private var instance: RealtimeDatabase? = null
-        private var reference: DatabaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        private var reference: DatabaseReference? = null
         private var user: FirebaseUser? = null
         private var userUid: String? = null
 
-        fun getInstance(context: Context) {
+        fun getInstance(context: Context): RealtimeDatabase? {
             if(instance == null) {
                 instance = RealtimeDatabase(context)
             }
-            instance
+            return instance
         }
 
     }
+
 
     private constructor() {}
 
@@ -31,23 +32,23 @@ class RealtimeDatabase {
             user = FirebaseAuth.getInstance().currentUser
             if(user == null) {
                 userUid = user!!.uid
+                reference = FirebaseDatabase.getInstance().getReference("Users").child(userUid!!)
             }
         } catch (e: Exception) {
-            Toast.makeText(context,"Something went wrong, Please restart the app",Toast.LENGTH_SHORT)
+            Toast.makeText(context,"Something went wrong, Please restart the app",Toast.LENGTH_SHORT).show()
         }
     }
 
-    fun getReference(): DatabaseReference {
+    fun getReference(): DatabaseReference? {
         if(reference == null) {
             FirebaseDatabase.getInstance().getReference()
         }
         return reference
     }
 
-    fun getUserUid(): String {
-        return userUid!!
+    fun getUserUid(): String? {
+        return userUid
     }
-
 }
 
 

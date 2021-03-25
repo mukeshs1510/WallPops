@@ -1,18 +1,18 @@
 package com.mbs.wallpops
 
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
-    private val firebaseRepository = FirebaseRepository()
+    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private var navController: NavController? = null
 
     override fun onCreateView(
@@ -21,6 +21,11 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,10 +39,23 @@ class HomeFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        if(firebaseRepository.getUser() == null) {
-            navController!!.navigate(R.id.action_homeFragment_to_authFragment)
-        }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.dropdown_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.logout_menu -> {
+                firebaseAuth.signOut()
+                navController!!.navigate(R.id.action_homeFragment_to_authFragment)
+                Toast.makeText(context,"Logout Successful", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 }

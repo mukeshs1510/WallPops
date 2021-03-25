@@ -1,9 +1,8 @@
 package com.mbs.wallpops
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -18,10 +17,6 @@ class AuthFragment : Fragment() {
     private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private var navController: NavController? = null
     private var floatView: Float = 0F
-
-    private val RC_SIGN_IN = 234
-    lateinit var mGoogleSignInClient: GoogleSignInOptions
-    val Req_Code:Int=123
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +33,6 @@ class AuthFragment : Fragment() {
         if(firebaseAuth.currentUser != null) {
             navController!!.navigate(R.id.action_authFragment_to_homeFragment)
             //(activity as AppCompatActivity).supportFragmentManager.beginTransaction().remove(this).commit()
-
         }
 
         animateButtons()

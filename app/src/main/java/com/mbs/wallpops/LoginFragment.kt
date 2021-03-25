@@ -67,11 +67,11 @@ class LoginFragment : Fragment() {
         dialog.window!!.attributes.windowAnimations = android.R.style.Animation_Dialog
         dialog.show()
 
-        this.firebaseAuth.signInWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(activity as AppCompatActivity, OnCompleteListener<AuthResult> { task ->
                 if (task.isSuccessful) {
-                    dialog.dismiss()
                     navController!!.navigate(R.id.action_loginFragment_to_homeFragment)
+                    dialog.dismiss()
                 } else {
                     Snackbar.make((activity as AppCompatActivity).findViewById(android.R.id.content),"Failed!", Snackbar.LENGTH_SHORT).show()
                     dialog.dismiss()

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -17,6 +18,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.mbs.wallpops.DatabaseRepos.RealtimeDatabase
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_register.*
 
@@ -89,9 +91,10 @@ class RegisterFragment : Fragment() {
             (activity as AppCompatActivity),
             OnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    saveUserData()
-                    dialog.dismiss()
+                    Toast.makeText((activity as AppCompatActivity),"Successfully Registered",Toast.LENGTH_SHORT).show()
                     navController!!.navigate(R.id.action_registerFragment_to_homeFragment)
+                    dialog.dismiss()
+                    //saveUserData()
                 } else {
                     dialog.dismiss()
                     Snackbar.make(
@@ -103,7 +106,8 @@ class RegisterFragment : Fragment() {
             })
     }
 
-    private fun saveUserData() {
-
-    }
+//    private fun saveUserData() {
+//        var userUid = RealtimeDatabase.getInstance(activity as AppCompatActivity)?.getUserUid()
+//        Toast.makeText((activity as AppCompatActivity),userUid.toString(),Toast.LENGTH_LONG).show()
+//    }
 }
